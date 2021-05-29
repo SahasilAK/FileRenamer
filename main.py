@@ -1,5 +1,5 @@
 import os
-from tkinter import *
+from tkinter import Label,Button,PhotoImage,Tk,Text
 from tkinter import filedialog, messagebox
 
 BACKGROUND_COLOR ="#3282b8"
@@ -12,9 +12,10 @@ FONT = ("Courier", 12, "normal")
 
 
 def renamer():
-    current_directory = filedialog.askdirectory()
+
     new_name = input_list.get(1.0,"end").strip()
-    
+    current_directory = filedialog.askdirectory()
+
     n = 1
     m = 0
     for file in os.listdir(current_directory):
@@ -25,9 +26,7 @@ def renamer():
         n+=1
         m+=1
 
-    messagebox.showinfo(title='Completed',message=f'Renamed {m} files')
-
-
+    messagebox.showinfo(title='Completed',message=f'{m} files renamed')
 
 def about():
     messagebox.showinfo(title = "About", message = 'Instruction:\nEg: old_name = ep 1.mp4 input = Episode\nOutput will be Episode 1.mp4,Episode 2.mp4,..etc \n<------------------------------------------------------------->\nV1.0\nCreated by Sahasil\ngithub.com/SahasilAK')
